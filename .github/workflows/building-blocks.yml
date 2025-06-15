@@ -3,19 +3,17 @@ name: 01 - Building Blocks
 on: push
 
 jobs:
-  echo-hello:
+  echo-goodbye:
     runs-on: self-hosted
     steps:
-      - name: Say hello
-        run: echo "Hello, world!"
+      - name: Allow scripts to run
+        shell: powershell
+        run: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
 
-#   echo-goodbye:
-#     runs-on: self-hosted
-#     steps:
-#       - name: Successful step
-#         run: |
-#           echo "I will succeed"
-#           exit 0
-#       - name: Say goodbye
-#         run: echo "Goodbye!"
+      - name: Successful step
+        run: |
+          echo "I will succeed"
+          exit 0
 
+      - name: Say goodbye
+        run: echo "Goodbye!"
