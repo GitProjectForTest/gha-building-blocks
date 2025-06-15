@@ -4,7 +4,7 @@ on: push
 
 jobs:
   echo-goodbye:
-    runs-on: self-hosted
+    runs-on: windows-latest
     steps:
       - name: Allow scripts to run
         shell: powershell
