@@ -1,6 +1,13 @@
 name: 01 - Building Blocks
 
-on: push
+on: 
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:  # Allows manual triggering of the workflow 
 
 jobs:
   echo-goodbye:
