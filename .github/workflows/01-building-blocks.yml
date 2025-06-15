@@ -15,4 +15,12 @@ jobs:
             
           - name: My First Job
             run: echo "My first job is running!"
+    my-second-job:
+        runs-on: windows-latest
+        steps:
+          - name: Allow scripts to run
+            shell: powershell
+            run: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
             
+          - name: My Second Job
+            run: echo "My second job is running after the first one!"
